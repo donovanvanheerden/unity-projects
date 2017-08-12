@@ -1,14 +1,9 @@
-*.sln
-*.userprefs
-*.csproj
-*.pidb
-*.unityproj
 .DS_Store
-Library/
+[Ll]ibrary/
 /obj
-/Temp
-/Builds
-Build
+[Tt]emp/
+[Bb]uilds/
+[Bb]uild/
 
 # Visual Studio 2015 cache directory
 /.vs/
