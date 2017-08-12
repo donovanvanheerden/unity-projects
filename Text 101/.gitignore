@@ -1,9 +1,9 @@
 .DS_Store
-/[Ll]ibrary/*
+[Ll]ibrary/*
 /obj
-/[Tt]emp/*
-/[Bb]uilds/*
-/[Bb]uild/*
+[Tt]emp/*
+[Bb]uilds/*
+[Bb]uild/*
 
 # Visual Studio 2015 cache directory
 /.vs/
