@@ -21,10 +21,21 @@ public class Ball : MonoBehaviour {
 			this.transform.position = paddle.transform.position + paddleToBallVector;
 
 		// wait for mouse click before starting the game
-		if (Input.GetMouseButtonDown(0)) {
+		if (!gameStarted && Input.GetMouseButtonDown(0)) {
 			gameStarted = true;
 
 			this.GetComponent<Rigidbody2D>().velocity = new Vector2(3f, 10f);
+		}
+	}
+
+	private void OnCollisionEnter2D(Collision2D other) {
+
+		if (gameStarted) { 
+
+			Vector2 tweak = new Vector2(Random.Range(0f, 0.5f), Random.Range(0f, 0.5f));
+
+			this.GetComponent<Rigidbody2D>().velocity += tweak;
+			this.GetComponent<AudioSource>().Play();
 		}
 	}
 }
