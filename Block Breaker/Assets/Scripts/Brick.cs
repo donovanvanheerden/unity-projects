@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class Brick : MonoBehaviour {
 
-	public static int breakableCount { get; private set; }
 	public AudioClip crack;
+	public static int breakableCount { get; private set; }
 	public Sprite[] hitSprites;
+	public GameObject smoke;
+
 	private int timesHit;
 	private LevelManager levelManager;
 	private bool isBreakable;
@@ -28,8 +31,15 @@ public class Brick : MonoBehaviour {
 
 		if (maxHits != 0 && timesHit >= maxHits) {
 			breakableCount--;
+			var _smoke = Instantiate(smoke, this.transform.position, Quaternion.identity);
+
+			var main = _smoke.GetComponent<ParticleSystem>().main;
+			
+			main.startColor = this.GetComponent<SpriteRenderer>().color;
+
 			Destroy(gameObject);
 			levelManager.BrickDestroyed();
+			
 		}
 		else {
 			AudioSource.PlayClipAtPoint(crack, transform.position);

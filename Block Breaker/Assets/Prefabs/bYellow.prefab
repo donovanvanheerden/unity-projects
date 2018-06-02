@@ -80,6 +80,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crack: {fileID: 8300000, guid: a899de6894a74334e88fd017c2d700eb, type: 3}
   hitSprites: []
+  smoke: {fileID: 1604480278710858, guid: 8c42324320064844180c9a6ce879d931, type: 2}
 --- !u!212 &212549470240576120
 SpriteRenderer:
   m_ObjectHideFlags: 1
